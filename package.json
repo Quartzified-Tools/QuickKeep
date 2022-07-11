@@ -1,8 +1,8 @@
 {
-  "name": "com.quartzified.utility.library",
+  "name": "com.quartzified.quickkeep",
   "version": "0.1.0",
-  "displayName": "Quartzified Utility Library",
-  "description": "Quartzified collection of utility code.",
+  "displayName": "QuickKeep",
+  "description": "Quickly keep your data",
   "unity": "2021.3",
   "unityRelease": "5f1",
   "documentationUrl": "",
@@ -10,8 +10,8 @@
   "licensesUrl": "",
   "keywords": [
     "Quartzified",
-    "Utility",
-    "Library"
+    "QuickKeep",
+    "PlayerPrefs"
   ],
   "author": {
     "name": "Quartzi",
