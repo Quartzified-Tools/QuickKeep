@@ -1,0 +1,22 @@
+{
+  "name": "com.quartzified.utility.library",
+  "version": "0.1.0",
+  "displayName": "Quartzified Utility Library",
+  "description": "Quartzified collection of utility code.",
+  "unity": "2021.3",
+  "unityRelease": "5f1",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "keywords": [
+    "Quartzified",
+    "Utility",
+    "Library"
+  ],
+  "author": {
+    "name": "Quartzi",
+    "email": "virgil@quartzi.io",
+    "url": "https://www.quartzi.io"
+  },
+  "type": "tool"
+}

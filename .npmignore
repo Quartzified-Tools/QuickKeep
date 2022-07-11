@@ -1,0 +1,14 @@
+artifacts/**
+build/**
+.DS_Store
+.npmrc
+.npmignore
+.git
+.gitignore
+.gitlab-ci.yml
+Scripts
+Scripts.meta
+Scenes
+Scenes.meta
+build.bat
+build.sh
