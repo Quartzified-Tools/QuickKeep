@@ -118,9 +118,9 @@ namespace Quartzified.QuickKeep
             {
                 switch(int.Parse(value))
                 {
-                    case 0:
-                        return true;
                     case 1:
+                        return true;
+                    case 0:
                         return false;
                 }
             }
