@@ -207,6 +207,11 @@ namespace Quartzified.QuickKeep
 
         #region Save
 
+        /// <summary>
+        /// Writes the specified (key) data stored by QuickKeep to disk.
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static void SaveKey(string key, string package = "")
         {
             string value = GetString(key, package);
@@ -231,6 +236,11 @@ namespace Quartzified.QuickKeep
             }
         }
 
+        /// <summary>
+        /// Writes the specified (package) modified data stored by QuickKeep to disk.
+        /// </summary>
+        /// <param name="package">Data Package</param>
+        /// <param name="keepTemp">Keep Temporary Data</param>
         public static void SavePackage(string package = "", bool keepTemp = true)
         {
             List<string> lines = new List<string>();
@@ -259,6 +269,10 @@ namespace Quartzified.QuickKeep
             }
         }
 
+        /// <summary>
+        /// Write all modified data stored by QuickKeep to disk.
+        /// </summary>
+        /// <param name="keepTemp">Keep Temporary Data</param>
         public static void SaveAll(bool keepTemp = true)
         {
             foreach (KeyValuePair<string, List<QuickData>> item in SetData.packages)
