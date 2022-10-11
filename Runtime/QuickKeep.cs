@@ -87,26 +87,86 @@ namespace Quartzified.QuickKeep
 
         #region Get
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static string GetString(string key, string package = "") => GetData.GetString(key, package);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static byte GetByte(string key, string package = "", byte defaultValue = 0) => GetData.GetByte(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static short GetShort(string key, string package = "", short defaultValue = 0) => GetData.GetShort(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static int GetInt(string key, string package = "", int defaultValue = 0) => GetData.GetInt(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static long GetLong(string key, string package = "", long defaultValue = 0) => GetData.GetLong(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static float GetFloat(string key, string package = "", float defaultValue = 0.0f) => GetData.GetFloat(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static double GetDouble(string key, string package = "", double defaultValue = 0.0) => GetData.GetDouble(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static bool GetBool(string key, string package = "", bool defaultValue = false) => GetData.GetBool(key, package, defaultValue);
 
+        /// <summary>
+        /// Returns the value corresponding to the specified (key).
+        /// If the (key) entry does not exist, it will return (defaultValue)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
         public static DateTime GetDateTime(string key, string package = "", DateTime defaultValue = new DateTime()) => GetData.GetDateTime(key, package, defaultValue);
 
         #endregion
 
+        /// <summary>
+        /// Returns true if the specified (key) exists.
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
+        /// <returns></returns>
         public static bool HasKey(string key, string package = "")
         {
             if (string.IsNullOrEmpty(package))
