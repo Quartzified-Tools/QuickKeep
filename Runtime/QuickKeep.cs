@@ -166,7 +166,7 @@ namespace Quartzified.QuickKeep
         /// </summary>
         /// <param name="key">Key</param>
         /// <param name="package">Data Package</param>
-        /// <returns></returns>
+        /// <returns>True or False</returns>
         public static bool HasKey(string key, string package = "")
         {
             if (string.IsNullOrEmpty(package))
