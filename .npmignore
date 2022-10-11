@@ -10,5 +10,7 @@ Scripts
 Scripts.meta
 Scenes
 Scenes.meta
+Tests
+Tests.meta
 build.bat
 build.sh
