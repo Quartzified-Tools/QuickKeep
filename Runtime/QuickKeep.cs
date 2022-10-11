@@ -20,12 +20,28 @@ namespace Quartzified.QuickKeep
         public static void SetString(string key, string value, string package = "") => SetData.SetString(key, value, package);
 
         /// <summary>
+        /// Sets the byte (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
+        public static void SetByte(string key, byte value, string package = "") => SetData.SetByte(key, value, package);
+
+        /// <summary>
         /// Sets the int (value) to the specified (key)
         /// </summary>
         /// <param name="key">Key</param>
         /// <param name="value">Value</param>
         /// <param name="package">Data Package</param>
         public static void SetInt(string key, int value, string package = "") => SetData.SetInt(key, value, package);
+
+        /// <summary>
+        /// Sets the long (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
+        public static void SetLong(string key, long value, string package = "") => SetData.SetLong(key, value, package);
 
         /// <summary>
         /// Sets the float (value) to the specified (key)
@@ -65,7 +81,11 @@ namespace Quartzified.QuickKeep
 
         public static string GetString(string key, string package = "") => GetData.GetString(key, package);
 
+        public static byte GetByte(string key, string package = "", byte defaultValue = 0) => GetData.GetByte(key, package, defaultValue);
+
         public static int GetInt(string key, string package = "", int defaultValue = 0) => GetData.GetInt(key, package, defaultValue);
+
+        public static long GetLong(string key, string package = "", long defaultValue = 0) => GetData.GetLong(key, package, defaultValue);
 
         public static float GetFloat(string key, string package = "", float defaultValue = 0.0f) => GetData.GetFloat(key, package, defaultValue);
 

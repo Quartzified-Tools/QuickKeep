@@ -22,7 +22,27 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
+        public static void SetByte(string key, byte value, string package)
+        {
+            if (string.IsNullOrEmpty(key))
+                return;
+
+            QuickData data = new QuickData(key, value.ToString());
+
+            WriteTempData(data, package);
+        }
+
         public static void SetInt(string key, int value, string package)
+        {
+            if (string.IsNullOrEmpty(key))
+                return;
+
+            QuickData data = new QuickData(key, value.ToString());
+
+            WriteTempData(data, package);
+        }
+
+        public static void SetLong(string key, long value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;

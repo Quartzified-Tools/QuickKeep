@@ -1,15 +1,25 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEngine;
 
 namespace Quartzified.QuickKeep.Data
 {
     public static class GetData
     {
         public static string GetString(string key, string package) => Get(key, package);
+
+        public static byte GetByte(string key, string package, byte defaultValue)
+        {
+            string value = Get(key, package);
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                return byte.Parse(value);
+            }
+
+            return defaultValue;
+        }
 
         public static int GetInt(string key, string package, int defaultValue)
         {
@@ -18,6 +28,18 @@ namespace Quartzified.QuickKeep.Data
             if (!string.IsNullOrEmpty(value))
             {
                 return int.Parse(value);
+            }
+
+            return defaultValue;
+        }
+
+        public static long GetLong(string key, string package, long defaultValue)
+        {
+            string value = Get(key, package);
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                return long.Parse(value);
             }
 
             return defaultValue;
