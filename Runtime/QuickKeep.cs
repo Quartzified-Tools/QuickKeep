@@ -67,7 +67,9 @@ namespace Quartzified.QuickKeep
 
         public static int GetInt(string key, string package = "", int defaultValue = 0) => GetData.GetInt(key, package, defaultValue);
 
-        public static float GetFloat(string key, string package = "", float defaultValue = 0f) => GetData.GetFloat(key, package, defaultValue);
+        public static float GetFloat(string key, string package = "", float defaultValue = 0.0f) => GetData.GetFloat(key, package, defaultValue);
+
+        public static double GetDouble(string key, string package = "", double defaultValue = 0.0) => GetData.GetDouble(key, package, defaultValue);
 
         public static bool GetBool(string key, string package = "", bool defaultValue = false) => GetData.GetBool(key, package, defaultValue);
 

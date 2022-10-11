@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace Quartzified.QuickKeep.Data
 {
     public static class GetData
     {
-        public static string GetString(string key, string package = "") => Get(key, package);
+        public static string GetString(string key, string package) => Get(key, package);
 
-        public static int GetInt(string key, string package = "", int defaultValue = 0)
+        public static int GetInt(string key, string package, int defaultValue)
         {
             string value = Get(key, package);
 
@@ -21,7 +23,7 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
-        public static float GetFloat(string key, string package = "", float defaultValue = 0f)
+        public static float GetFloat(string key, string package, float defaultValue)
         {
             string value = Get(key, package);
 
@@ -33,7 +35,19 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
-        public static bool GetBool(string key, string package = "", bool defaultValue = false)
+        public static double GetDouble(string key, string package, double defaultValue)
+        {
+            string value = Get(key, package);
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                return double.Parse(value);
+            }
+
+            return defaultValue;
+        }
+
+        public static bool GetBool(string key, string package, bool defaultValue)
         {
             string value = Get(key, package);
 
@@ -51,7 +65,7 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
-        public static DateTime GetDateTime(string key, string package = "", DateTime defaultValue = new DateTime())
+        public static DateTime GetDateTime(string key, string package, DateTime defaultValue)
         {
             string value = Get(key, package);
 
@@ -63,7 +77,7 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
-        static string Get(string key, string package = "")
+        static string Get(string key, string package)
         {
             if (string.IsNullOrEmpty(package))
                 package = "global";
@@ -82,9 +96,9 @@ namespace Quartzified.QuickKeep.Data
                     return tempData.value;
                 }
             }
-            else if (File.Exists(GetDirectory(package)))
+            else if (File.Exists(QuickKeep.GetDirectory(package)))
             {
-                string path = GetDirectory(package);
+                string path = QuickKeep.GetDirectory(package);
                 List<string> line = File.ReadAllLines(path).ToList();
 
                 for (int i = 0; i < line.Count; i++)

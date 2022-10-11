@@ -9,7 +9,7 @@ namespace Quartzified.QuickKeep.Data
     {
         public static Dictionary<string, List<QuickData>> packages = new Dictionary<string, List<QuickData>>();
 
-        public static void SetString(string key, string value, string package = "")
+        public static void SetString(string key, string value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;
@@ -22,7 +22,7 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
-        public static void SetInt(string key, int value, string package = "")
+        public static void SetInt(string key, int value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;
@@ -32,7 +32,7 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
-        public static void SetFloat(string key, float value, string package = "")
+        public static void SetFloat(string key, float value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;
@@ -42,7 +42,17 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
-        public static void SetBool(string key, bool value, string package = "")
+        public static void SetDouble(string key, double value, string package)
+        {
+            if (string.IsNullOrEmpty(key))
+                return;
+
+            QuickData data = new QuickData(key, value.ToString());
+
+            WriteTempData(data, package);
+        }
+
+        public static void SetBool(string key, bool value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;
@@ -54,7 +64,7 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
-        public static void SetDateTime(string key, DateTime value, string package = "")
+        public static void SetDateTime(string key, DateTime value, string package)
         {
             if (string.IsNullOrEmpty(key))
                 return;
@@ -64,7 +74,7 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
-        static void WriteTempData(QuickData data, string package = "")
+        static void WriteTempData(QuickData data, string package)
         {
             if (string.IsNullOrEmpty(package))
                 package = "global";
