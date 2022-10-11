@@ -28,6 +28,14 @@ namespace Quartzified.QuickKeep
         public static void SetByte(string key, byte value, string package = "") => SetData.SetByte(key, value, package);
 
         /// <summary>
+        /// Sets the short (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
+        public static void SetShort(string key, short value, string package = "") => SetData.SetShort(key, value, package);
+
+        /// <summary>
         /// Sets the int (value) to the specified (key)
         /// </summary>
         /// <param name="key">Key</param>
@@ -82,6 +90,8 @@ namespace Quartzified.QuickKeep
         public static string GetString(string key, string package = "") => GetData.GetString(key, package);
 
         public static byte GetByte(string key, string package = "", byte defaultValue = 0) => GetData.GetByte(key, package, defaultValue);
+
+        public static short GetShort(string key, string package = "", short defaultValue = 0) => GetData.GetShort(key, package, defaultValue);
 
         public static int GetInt(string key, string package = "", int defaultValue = 0) => GetData.GetInt(key, package, defaultValue);
 

@@ -21,6 +21,18 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
+        public static short GetShort(string key, string package, short defaultValue)
+        {
+            string value = Get(key, package);
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                return short.Parse(value);
+            }
+
+            return defaultValue;
+        }
+
         public static int GetInt(string key, string package, int defaultValue)
         {
             string value = Get(key, package);

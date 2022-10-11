@@ -32,6 +32,16 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
+        public static void SetShort(string key, short value, string package)
+        {
+            if (string.IsNullOrEmpty(key))
+                return;
+
+            QuickData data = new QuickData(key, value.ToString());
+
+            WriteTempData(data, package);
+        }
+
         public static void SetInt(string key, int value, string package)
         {
             if (string.IsNullOrEmpty(key))
