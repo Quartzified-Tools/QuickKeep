@@ -11,14 +11,52 @@ namespace Quartzified.QuickKeep
     {
         #region Set
 
+        /// <summary>
+        /// Sets the string (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
         public static void SetString(string key, string value, string package = "") => SetData.SetString(key, value, package);
 
+        /// <summary>
+        /// Sets the int (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
         public static void SetInt(string key, int value, string package = "") => SetData.SetInt(key, value, package);
 
+        /// <summary>
+        /// Sets the float (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
         public static void SetFloat(string key, float value, string package = "") => SetData.SetFloat(key, value, package);
 
+        /// <summary>
+        /// Sets the double (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
+        public static void SetDouble(string key, double value, string package = "") => SetData.SetDouble(key, value, package);
+
+        /// <summary>
+        /// Sets the bool (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
         public static void SetBool(string key, bool value, string package = "") => SetData.SetBool(key, value, package);
 
+        /// <summary>
+        /// Sets the DateTime (value) to the specified (key)
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="value">Value</param>
+        /// <param name="package">Data Package</param>
         public static void SetDateTime(string key, DateTime value, string package = "") => SetData.SetDateTime(key, value, package);
 
         #endregion
