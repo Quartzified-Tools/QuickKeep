@@ -285,8 +285,17 @@ namespace Quartzified.QuickKeep
 
         #region Delete
 
+        /// <summary>
+        /// Removes all temporarily saved Data from QuickKeep. Only use when necessary.
+        /// </summary>
         public static void DeleteTemp() => SetData.packages.Clear();
 
+        /// <summary>
+        /// Removes the specified (key's) data in the if specified (package) created by QuickKeep.
+        /// </summary>
+        /// <param name="key">Key</param>
+        /// <param name="package">Data Package</param>
+        /// <param name="keepTemp">Keep Temporary Data</param>
         public static void DeleteKey(string key, string package = "", bool keepTemp = false)
         {
             if (SetData.packages.ContainsKey(package))
@@ -328,6 +337,11 @@ namespace Quartzified.QuickKeep
             }
         }
 
+        /// <summary>
+        /// Removes all data stored in the specified (package) created by QuickKeep.
+        /// </summary>
+        /// <param name="package">Data Package</param>
+        /// <param name="keepTemp">Keep Temporary Data</param>
         public static void DeletePackage(string package = "", bool keepTemp = false)
         {
             if (SetData.packages.ContainsKey(package))
@@ -341,6 +355,9 @@ namespace Quartzified.QuickKeep
             }
         }
 
+        /// <summary>
+        /// Removes all data stored by QuickKeep.
+        /// </summary>
         public static void DeleteAll()
         {
             DirectoryInfo di = new DirectoryInfo(DataPath);
@@ -361,7 +378,11 @@ namespace Quartzified.QuickKeep
         #endregion
 
 
-
+        /// <summary>
+        /// Returns the directory of the specified (package)
+        /// </summary>
+        /// <param name="package"></param>
+        /// <returns>Directory Path (string)</returns>
         public static string GetDirectory(string package = "")
         {
             if (!string.IsNullOrEmpty(package))
@@ -371,6 +392,11 @@ namespace Quartzified.QuickKeep
 
         }
 
+        /// <summary>
+        /// Returns the persistant data path of QuickKeep.
+        /// </summary>
+        /// <param name="package"></param>
+        /// <returns>Persistent Data Path (string)</returns>
         public static string DataPath => string.Format("{0}/{1}/", Application.persistentDataPath, "QuickKeep");
     }
 
