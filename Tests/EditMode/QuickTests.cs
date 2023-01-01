@@ -85,4 +85,22 @@ public class QuickTests
         Assert.AreEqual(dt, QuickKeep.GetDateTime("DateTimeTest_1", "UnitTests"));
         Assert.AreEqual(dtEpoch, QuickKeep.GetDateTime("DateTimeTest_2", "UnitTests"));
     }
+
+    [Test]
+    public void TestAllData()
+    {
+        string[] data = new string[] { "Alpha", "Beta", "Charlie", "Delta", "Enemy", "Friendly" };
+
+        QuickKeep.SetAllData(data, "AllDataTests");
+
+        string[] readData = QuickKeep.GetAllData("AllDataTests");
+
+        Assert.AreEqual("Alpha", readData[0]);
+        Assert.AreEqual("Beta", readData[1]);
+        Assert.AreEqual("Charlie", readData[2]);
+        Assert.AreNotEqual("Delta", readData[4]);
+
+        Assert.AreEqual("Enemy", QuickKeep.GetAllData("AllDataTests")[4]);
+        Assert.NotNull(QuickKeep.GetAllData("AllDataTests")[5]);
+    }
 }

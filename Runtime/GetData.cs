@@ -111,6 +111,20 @@ namespace Quartzified.QuickKeep.Data
             return defaultValue;
         }
 
+        public static string[] GetAllData(string package = "")
+        {
+            if (string.IsNullOrEmpty(package))
+                package = "global";
+
+            if (File.Exists(QuickKeep.GetDirectory(package)))
+            {
+                string path = QuickKeep.GetDirectory(package);
+                return File.ReadAllLines(path);
+            }
+
+            return null;
+        }
+
         static string Get(string key, string package)
         {
             if (string.IsNullOrEmpty(package))

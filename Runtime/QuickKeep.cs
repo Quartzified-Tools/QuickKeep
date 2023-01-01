@@ -83,6 +83,13 @@ namespace Quartzified.QuickKeep
         /// <param name="package">Data Package</param>
         public static void SetDateTime(string key, DateTime value, string package = "") => SetData.SetDateTime(key, value, package);
 
+        /// <summary>
+        /// Sets all the data given in seperate lines! [WARNING] This will overwrite any previous data on the specified package! Aswell as temp data!
+        /// </summary>
+        /// <param name="data">Values</param>
+        /// <param name="package">Data Package</param>
+        public static void SetAllData(string[] data, string package) => SetData.SetAllData(data, package);
+
         #endregion
 
         #region Get
@@ -158,6 +165,13 @@ namespace Quartzified.QuickKeep
         /// <param name="key">Key</param>
         /// <param name="package">Data Package</param>
         public static DateTime GetDateTime(string key, string package = "", DateTime defaultValue = new DateTime()) => GetData.GetDateTime(key, package, defaultValue);
+
+        /// <summary>
+        /// Returns all the values written in the specified package!
+        /// </summary>
+        /// <param name="package">Data Package</param>
+        /// <returns></returns>
+        public static string[] GetAllData(string package) => GetData.GetAllData(package);
 
         #endregion
 

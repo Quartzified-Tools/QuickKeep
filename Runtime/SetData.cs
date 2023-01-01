@@ -104,6 +104,21 @@ namespace Quartzified.QuickKeep.Data
             WriteTempData(data, package);
         }
 
+        public static void SetAllData(string[] data, string package)
+        {
+            if (data.Length <= 0)
+                throw new ArgumentException("No data has been passed to set!");
+
+            if (string.IsNullOrEmpty(package))
+                throw new ArgumentException("The Package must be given!");
+
+            if (!Directory.Exists(QuickKeep.DataPath))
+                Directory.CreateDirectory(QuickKeep.DataPath);
+
+            File.WriteAllLines(QuickKeep.GetDirectory(package), data);
+            packages.Remove(package);
+        }
+
         static void WriteTempData(QuickData data, string package)
         {
             if (string.IsNullOrEmpty(package))
