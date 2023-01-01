@@ -12,7 +12,7 @@ I actually decided to write stuff down. You can find the documentation [here](ht
 
 ## FAQ
 **Supported Unity Versions?**  
-Definitely Unity 2021.3.5f1  
+Definitely Unity 2021.3.5f1 and higher  
 
 | **How to install?** | Comments |
 |-------------|-------------|
